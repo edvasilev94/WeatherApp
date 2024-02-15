@@ -34,6 +34,7 @@ export default function Card() {
             <h3>City Name: {city ? city[0].EnglishName : null}</h3>
             <h6>Temp: {weather ? weather.DailyForecasts[0].Temperature.Minimum.Value : null} C</h6>
             <h6>Wind: </h6>
+            // this is a test
         </>
     );
 }
