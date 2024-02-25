@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import Card from './componenets/Card/Card';
+import Home from './componenets/Home/Home';
 
 function App() {
 
   return (
         <Routes>
-          <Route path='/' element={<Card />} />
+          <Route path='/' element={<Home />} />
         </Routes>
   )
 }

@@ -8,6 +8,6 @@ export const getCity = (cityName) => {
 
 
 export const getWeather = (cityCode) => {
-    return fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${cityCode}?apikey=VSY3buYfkcOZGn4jcmEjoRQojV5EwLyS&metric=true`)
+    return fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityCode}?apikey=VSY3buYfkcOZGn4jcmEjoRQojV5EwLyS&metric=true`)
         .then(res => res.json())
 };

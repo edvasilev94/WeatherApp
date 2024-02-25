@@ -1,0 +1,5 @@
+.card {
+    border: 0.1rem solid grey;
+    max-width: 20vw;
+    padding: 2rem;
+}
