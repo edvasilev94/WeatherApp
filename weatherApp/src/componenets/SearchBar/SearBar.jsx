@@ -5,18 +5,19 @@ export default function Search() {
 
 
     const [citySearch, setCitySearch] = useState([]);
-    const [searchResult, setsearchResult] = useState([]);
+    const [searchResult, setsearchResult] = useState(["Sofia"]);
 
     const onSearchHandler = (e) => {
         e.preventDefault()
         setCitySearch(e.target.value)
-        
     }
 
     const onSearchClickHandler = (e) => {
         e.preventDefault()
         setsearchResult(citySearch)
     } 
+
+
 
     return (
         <>

@@ -4,9 +4,9 @@ import * as weatherService from "../../services/weatherService";
 import "../Card/card.css"
 
 export default function Card({ searchResult }) {
-    const [city, setCity] = useState();
-    const [weather, setWeather] = useState();
-    const [cityCode, setCityCode] = useState();
+    const [city, setCity] = useState(null);
+    const [weather, setWeather] = useState(null);
+    const [cityCode, setCityCode] = useState(null);
 
     useEffect(() => {
         weatherService.getCity(searchResult)
