@@ -34,14 +34,21 @@ export default function Card({ searchResult }) {
 
     return (
         <div className="container">
-            <div className="card">
-                <img src={`../../../WeatherPics/${weather ? weather[0].WeatherIcon : null}.jpg`} alt={weather ? weather[0].WeatherText : "picture"} />
-                <p className="city-name">{city ? city[0].EnglishName : null}</p>
-                <p className="temp">Temp: {weather ? weather[0].Temperature.Metric.Value : null}&deg;C</p>
-                <p className="weather-text">{weather ? weather[0].WeatherText : null}</p>
-                <p className="humidity">Relative Humidity: {weather ? weather[0].RelativeHumidity : null}</p>
-                <p className="wind-speed">Wind speed: {weather ? weather[0].Wind.Speed.Metric.Value : null} Km/h</p>
-            </div>
+            {weather && weather[0] && city && city[0] ? (
+                <div className="card">
+                    <img src={`../../../WeatherPics/${weather[0].WeatherIcon}.jpg`} alt={weather[0].WeatherText} />
+                    <p className="city-name">{city[0].EnglishName}</p>
+                    <p className="temp">{weather[0].Temperature.Metric.Value}&deg;C</p>
+                    <p className="weather-text">{weather[0].WeatherText}</p>
+                    <p className="humidity">Relative Humidity: {weather[0].RelativeHumidity}</p>
+                    <p className="wind-speed">Wind speed: {weather[0].Wind.Speed.Metric.Value} Km/h</p>
+                </div>
+            ) : (
+                <div className="error-message">
+                    <p>Seems like the city you are looking for doesn't exist.</p>
+                    <p>Try to check if the spelling is correct.</p>
+                </div>
+            )}
         </div>
     );
 }
