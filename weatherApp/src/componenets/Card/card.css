@@ -1,7 +1,33 @@
+img {
+    border-radius: 2em;
+    max-width: 100%;
+}
+
+.cotainer {
+    display: flex;
+}
+
 .card {
     display: flex;
     flex-direction: column;
-    border: 0.1rem solid grey;
+    border: 0.1em solid grey;
     max-width: 20vw;
-    padding: 2rem;
+    padding: 0.5em;
+    border-radius: 2em;
+    align-items: center;
+    gap: 1.5em;
+    margin: 0 auto;
+
+    -webkit-box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
+    box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
+}
+
+.city-name {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.temp, .weather-text, .humidity, .wind-speed{
+    font-size: 1.2em;
 }
