@@ -1,4 +1,4 @@
-import Search from "../SearchBar/SearchBar"
+import Search from "../Search/Search"
 
 export default function Home () {
 

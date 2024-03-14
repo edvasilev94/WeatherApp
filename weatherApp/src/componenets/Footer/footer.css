@@ -1,0 +1,27 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+li {
+    margin: 2rem 0;
+    list-style-type: none;
+    font-weight: 500;
+}
+
+.footer-ul{
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.footer {
+    background-color: #F2F1EB;
+    margin-top: 3rem;
+}

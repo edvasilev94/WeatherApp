@@ -42,6 +42,7 @@ export default function Card({ searchResult }) {
                     <p className="weather-text">{weather[0].WeatherText}</p>
                     <p className="humidity">Relative Humidity: {weather[0].RelativeHumidity}</p>
                     <p className="wind-speed">Wind speed: {weather[0].Wind.Speed.Metric.Value} Km/h</p>
+                    
                 </div>
             ) : (
                 <div className="error-message">

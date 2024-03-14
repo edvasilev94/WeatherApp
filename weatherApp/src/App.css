@@ -9,7 +9,16 @@ html {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: rgb(252,176,69);
   background: radial-gradient(circle, rgba(252,176,69,1) 0%, rgba(29,169,253,1) 100%);
+}
+
+.conainer-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

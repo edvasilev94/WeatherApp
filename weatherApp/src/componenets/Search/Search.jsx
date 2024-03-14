@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../Card/Card";
 
-import "../SearchBar/searchBar.css"
+import "./search.css"
 
 export default function Search() {
 
