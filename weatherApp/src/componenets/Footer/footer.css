@@ -16,12 +16,20 @@ li {
 }
 
 .footer-ul{
+    font-size: 1.3em;
     display: flex;
     justify-content: space-around;
+    font-family: "Bilbo", cursive;
+    font-weight: normal;
+    font-style: normal;
    
 }
 
 .footer {
     background-color: #F2F1EB;
     margin-top: 3rem;
+
+    -webkit-box-shadow: 0px -4px 10px -4px rgba(0,0,0,0.61);
+    -moz-box-shadow: 0px -4px 10px -4px rgba(0,0,0,0.61);
+    box-shadow: 0px -4px 10px -4px rgba(0,0,0,0.61);
 }
