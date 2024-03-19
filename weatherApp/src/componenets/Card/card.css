@@ -4,6 +4,7 @@ img {
     height: 15em;
 }
 
+
 .cotainer {
     display: flex;
 }
@@ -22,6 +23,8 @@ img {
     -webkit-box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
     -moz-box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
     box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
+
+    
 }
 
 .city-name {
