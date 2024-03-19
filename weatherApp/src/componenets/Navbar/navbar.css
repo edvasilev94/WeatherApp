@@ -12,4 +12,11 @@ nav {
 .navbar-li {
     padding: 0 10em;
     margin: 0;
+    max-width: 35em;
+}
+
+.logo {
+ width: 30%;
+ height: auto;
+ border-radius: 0;
 }
