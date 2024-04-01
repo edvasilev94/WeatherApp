@@ -6,30 +6,64 @@ import "./search.css"
 export default function Search() {
 
 
-    const [citySearch, setCitySearch] = useState([]);
     const [searchResult, setsearchResult] = useState(["Sofia"]);
+    const [input, setInput] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
 
-    const onSearchHandler = (e) => {
-        e.preventDefault()
-        setCitySearch(e.target.value)
-    }
+  
 
     const onSearchClickHandler = (e) => {
         e.preventDefault()
-        setsearchResult(citySearch)
-    } 
+        setsearchResult(input)
+    }
 
+
+    const handleChange = async (e) => {
+        const inputValue = e.target.value;
+        setInput(inputValue);
+
+        const fetchedSuggestions = await fetchSuggestions(inputValue);
+        setSuggestions(fetchedSuggestions);
+    };
+
+    const fetchSuggestions = async (input) => {
+        const apiKey = 'VSY3buYfkcOZGn4jcmEjoRQojV5EwLyS';
+        const apiUrl = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${input}`;
+
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error fetching suggestions:', error);
+            return [];
+        }
+    };
+
+    const handleSelectSuggestion = (suggestion) => {
+        setInput(suggestion.LocalizedName);
+        setSuggestions([]);
+    };
 
 
     return (
         <form>
             <div className="search-bar-container">
                 <div className="serach">
-                    <input className="input-city" type="text" onChange={onSearchHandler} placeholder="search a city" />
-                    <button className="search-button" onClick={onSearchClickHandler}>Search</button>
+                    <input className="input-city" type="text" value={input} onChange={handleChange} placeholder="search a city" />
                 </div>
+                <button className="search-button" onClick={onSearchClickHandler}>Search</button>
             </div>
-            <Card searchResult={searchResult}/>
+            <div className="search-suggestions">
+                <ul className="suggestion-ul">
+                    {suggestions?.map((suggestion) => (
+                        <li key={suggestion.Key} onClick={() => handleSelectSuggestion(suggestion)}>
+                            {suggestion.LocalizedName}, {suggestion.Country.LocalizedName}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <Card searchResult={searchResult} />
         </form>
 
     )
