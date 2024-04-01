@@ -23,6 +23,7 @@
 .search-button:hover {
     background-color: white;
     color: rgb(0, 162, 255);
+    cursor: pointer;
 }
 
 .input-city:focus {
