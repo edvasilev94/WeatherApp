@@ -1,7 +1,9 @@
+
 .search-bar-container {
     display: flex;
     justify-content: center;
-    margin: 3em 0;
+    width: 100%;
+    margin-top: 2em;
 }
 
 .input-city, .search-button {
@@ -30,6 +32,11 @@
     outline: none;
 }
 
+.suggestion-ul {
+    width: 100%;
+    padding: 0.7em;
+}
+
 .suggestion-ul li:nth-of-type(1n+4) {
     display: none;
 
@@ -38,5 +45,29 @@
 .search-suggestions {
     display: flex;
     justify-content: center;
-    background-color: aliceblue;
+    background-color: transparent;
+    width: 20%;
+    border-radius: 1em;
+    -webkit-box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
+    box-shadow: 4px 7px 9px 0px rgba(0,0,0,0.24);
+}
+
+.serach-and-suggestion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.suggested-city {
+    padding: 0.5em;
+}
+
+.suggested-city:hover {
+    background-color: rgb(0, 162, 255);
+    color: white;
+    border-radius: 1em;
+    cursor: pointer;
 }

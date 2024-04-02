@@ -10,11 +10,11 @@ export default function Search() {
     const [input, setInput] = useState('');
     const [suggestions, setSuggestions] = useState([]);
 
-  
+
 
     const onSearchClickHandler = (e) => {
-        e.preventDefault()
-        setsearchResult(input)
+        e.preventDefault();
+        setsearchResult(input);
     }
 
 
@@ -48,23 +48,26 @@ export default function Search() {
 
     return (
         <form>
-            <div className="search-bar-container">
-                <div className="serach">
-                    <input className="input-city" type="text" value={input} onChange={handleChange} placeholder="search a city" />
+            <div className="serach-and-suggestion">
+                <div className="search-bar-container">
+                    <div className="serach">
+                        <input className="input-city" type="text" value={input} onChange={handleChange} placeholder="search a city" />
+                    </div>
+                    <button className="search-button" onClick={onSearchClickHandler}>Search</button>
                 </div>
-                <button className="search-button" onClick={onSearchClickHandler}>Search</button>
-            </div>
-            <div className="search-suggestions">
-                <ul className="suggestion-ul">
-                    {suggestions?.map((suggestion) => (
-                        <li key={suggestion.Key} onClick={() => handleSelectSuggestion(suggestion)}>
-                            {suggestion.LocalizedName}, {suggestion.Country.LocalizedName}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                {suggestions?.length > 0 && (
+                <div className="search-suggestions">
+                    <ul className="suggestion-ul">
+                        {suggestions.map((suggestion) => (
+                            <li className="suggested-city" key={suggestion.Key} onClick={() => handleSelectSuggestion(suggestion)}>
+                                {suggestion.LocalizedName}, {suggestion.Country.LocalizedName}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+            </div> 
             <Card searchResult={searchResult} />
         </form>
-
     )
 }

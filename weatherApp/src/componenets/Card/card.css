@@ -5,8 +5,10 @@ img {
 }
 
 
-.cotainer {
+.container {
     display: flex;
+    margin-top: 3em;
+    justify-content: center;
 }
 
 .card {
