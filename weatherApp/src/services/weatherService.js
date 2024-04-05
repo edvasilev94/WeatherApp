@@ -1,4 +1,4 @@
-const APIKEY = "VSY3buYfkcOZGn4jcmEjoRQojV5EwLyS";
+const APIKEY = import.meta.env.WEATHER_API_KEY;
 
 export const getCity = (cityName) => {
     return fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${APIKEY}&q=${cityName}`)

@@ -20,12 +20,10 @@ export default function Search() {
     }
 
 
-    const onChangeHandler = async (e) => {
+    const onChangeHandler = (e) => {
         const inputValue = e.target.value;
         setInput(inputValue);
 
-        // const fetchedSuggestions = await fetchSuggestions(inputValue);
-        // setSuggestions(fetchedSuggestions);
         weatherService.fetchSuggestions(inputValue)
             .then(result => {
                 setSuggestions(result)
@@ -36,20 +34,6 @@ export default function Search() {
             })
 
     };
-
-    // const fetchSuggestions = async (input) => {
-    //     const apiKey = 'VSY3buYfkcOZGn4jcmEjoRQojV5EwLyS';
-    //     const apiUrl = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${input}`;
-
-    //     try {
-    //         const response = await fetch(apiUrl);
-    //         const data = await response.json();
-    //         return data;
-    //     } catch (error) {
-    //         console.error('Error fetching suggestions:', error);
-    //         return [];
-    //     }
-    // };
 
     const selectSuggestionHandler = (suggestion) => {
         setInput(suggestion.LocalizedName);
